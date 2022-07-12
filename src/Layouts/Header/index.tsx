@@ -1,11 +1,8 @@
-import React, {FC} from 'react';
-import styled from '@emotion/styled';
-import {jsx} from '@emotion/react';
+import React from 'react';
 
 function Header() {
-	return <div>
-
-    </div>;
+	return <header>
+    </header>;
 }
 
 export default Header;
