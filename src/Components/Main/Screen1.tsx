@@ -22,12 +22,12 @@ function Screen1() {
 	return (
 		<>
 			<StyledContainer bgColor={bgPrimaryColor}>
-				<Typography variant="h4">
+				<Typography variant="h3">
 					국내 최초 웹소설,웹툰 정산 통계 자동화
 				</Typography>
 				<Typography variant="h1">작가와 출판사를 위한</Typography>
 				<Typography variant="h1">웹콘텐츠 관리 프로그램</Typography>
-				<RoundButton variant="contained" css={{ marginTop: '100px' }}>
+				<RoundButton variant="contained" css={{ marginTop: '5vw' }}>
 					<Typography variant="h4">데모체험 시작하기 </Typography>
 					<KeyboardArrowDownIcon fontSize="large" />
 				</RoundButton>

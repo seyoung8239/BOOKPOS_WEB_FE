@@ -9,6 +9,9 @@ function Home() {
 	return (
 		<>
 			<Screen1 />
+			<Screen2 />
+			<Screen3 />
+			<Screen4 />
 		</>
 	);
 }

@@ -19,7 +19,7 @@ const Appbar = styled.header`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	height: 70px;
 	box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 15px 0px;
 `;

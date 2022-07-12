@@ -1,12 +1,11 @@
-import styled from '@emotion/styled';
+import { styled } from '@mui/material/styles';
 
 interface ContainerProps {
 	bgColor?: string;
 }
 
-export const StyledContainer = styled.div<ContainerProps>`
-	width: 100%;
-	height: 780px;
-    padding: 150px 0px 50px 100px;
+export const StyledContainer = styled('div')<ContainerProps>`
+	height: 880px;
+	padding: 4vw;
 	background: ${props => (props.bgColor ? props.bgColor : 'white')};
 `;
