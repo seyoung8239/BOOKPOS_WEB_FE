@@ -1,7 +1,7 @@
 import React from 'react';
 
 function EstimationInquiry() {
-	return <>EstimationInquiry</>;
+	return <>Estimation Inquiry</>;
 }
 
 export default EstimationInquiry;
