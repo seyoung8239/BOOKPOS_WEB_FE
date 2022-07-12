@@ -1,7 +1,5 @@
-export const colors = {
-	bgPrimary: '#D7CFE9',
-	bgSecondary: '#EDF0FF',
-	primary: '#623AD6',
-	secondary: '#0020A4',
-	triple: '#254FFE',
-};
+export const bgPrimaryColor = '#E8E4F4';
+export const bgSecondaryColor = '#EDF0FF';
+export const primaryColor = '#623AD6';
+export const secondaryColor = '#0020A4';
+export const tripleColor = '#254FFE';
