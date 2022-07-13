@@ -3,7 +3,7 @@ import React from 'react';
 import Header from './Layouts/Header';
 import Routes from './pages/Routes';
 
-import theme from './styles/resizeFont';
+import theme from './styles/theme';
 
 function App() {
 	return (

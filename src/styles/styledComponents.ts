@@ -6,6 +6,10 @@ interface ContainerProps {
 
 export const StyledContainer = styled('div')<ContainerProps>`
 	height: 880px;
-	padding: 4vw;
+	padding: 8vw 5vw 5vw 5vw;
 	background: ${props => (props.bgColor ? props.bgColor : 'white')};
+
+	@media (max-width: 1500px) {
+		
+	}
 `;
