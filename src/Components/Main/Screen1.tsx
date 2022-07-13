@@ -21,7 +21,7 @@ const RoundButton = styled(Button)<ButtonProps>(({ theme }) => ({
 function Screen1() {
 	return (
 		<>
-			<StyledContainer bgColor={bgPrimaryColor}>
+			<StyledContainer bgcolor={bgPrimaryColor}>
 				<Typography variant="h3">
 					국내 최초 웹소설,웹툰 정산 통계 자동화
 				</Typography>

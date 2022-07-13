@@ -11,7 +11,7 @@ const youtubeSrc = 'https://www.youtube.com/embed/iDjQSdN_ig8';
 function Screen4() {
 	return (
 		<>
-			<StyledContainer bgColor="#F5F5F5">
+			<StyledContainer bgcolor="#F5F5F5">
 				<div style={{ textAlign: 'center' }}>
 					<Typography variant="h2">왜 북포스인가?</Typography>
 				</div>

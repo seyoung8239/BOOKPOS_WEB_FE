@@ -1,11 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import React, { useState } from 'react';
-import css from '@emotion/react';
 
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { styled, ToggleButton, Radio } from '@mui/material';
+import { styled, Radio } from '@mui/material';
 
 interface formStateType {
 	company: string;
@@ -109,7 +108,8 @@ function GuideRequestForm() {
 					inputProps={{ 'aria-label': 'B' }}
 				/>
 				<Typography variant="h6">
-					<span style={{color: 'blue'}}>개인정보 수집 및 이용</span>에 동의합니다.
+					<span style={{ color: 'blue' }}>개인정보 수집 및 이용</span>
+					에 동의합니다.
 				</Typography>
 			</div>
 			<StyledButton type="submit" variant="contained">

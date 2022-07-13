@@ -5,14 +5,13 @@ import { StyledContainer } from '../../styles/styledComponents';
 import { HalfContainer } from '../../styles/styledComponents';
 
 import { Typography } from '@mui/material';
-import styled from '@emotion/styled';
 
 import GuideRequestForm from './GuideRequestForm';
 
 function Screen3() {
 	return (
 		<>
-			<StyledContainer bgColor={bgTripleColor}>
+			<StyledContainer bgcolor={bgTripleColor}>
 				<div style={{ display: 'flex', height: '80%' }}>
 					<HalfContainer>
 						<Typography variant="h2">

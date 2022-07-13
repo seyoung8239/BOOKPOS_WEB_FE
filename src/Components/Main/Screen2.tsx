@@ -55,11 +55,11 @@ const CardList = styled.div`
 	justify-items: center;
 
 	@media (max-width: 2200px) {
-		width: 65%;
+		width: 100%;
 		height: 50vw;
 	}
 	@media (max-width: 1500px) {
-		width: 90%;
+		width: 100%;
 		height: 60vw;
 	}
 `;
@@ -76,8 +76,8 @@ const StyledCard = styled.div`
 		height: 17.5vw;
 	}
 	@media (max-width: 1500px) {
-		width: 250px;
-		height: 320px;
+		width: 220px;
+		height: 330px;
 	}
 `;
 
@@ -96,7 +96,7 @@ function Screen2() {
 }
 
 function Card({ data }: { data: CardType }) {
-	const { title, desc, icon } = data;
+	const { title, desc } = data;
 	return (
 		<StyledCard>
 			<div style={{ height: '35%' }}>
