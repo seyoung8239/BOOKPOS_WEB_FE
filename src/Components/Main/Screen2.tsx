@@ -47,20 +47,38 @@ const cardData = [
 ];
 
 const CardList = styled.div`
-	width: 70vw;
+	width: 40vw;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	row-gap: 5vw;
+	row-gap: 1vw;
 	margin: auto;
 	justify-items: center;
+
+	@media (max-width: 2200px) {
+		width: 65%;
+		height: 50vw;
+	}
+	@media (max-width: 1500px) {
+		width: 90%;
+		height: 60vw;
+	}
 `;
 
 const StyledCard = styled.div`
 	width: 10vw;
-	height: 15vw;
+	height: 12.5vw;
 	background-color: ${bgSecondaryColor};
 	border-radius: 20px;
 	padding: 30px;
+
+	@media (max-width: 2200px) {
+		width: 13vw;
+		height: 17.5vw;
+	}
+	@media (max-width: 1500px) {
+		width: 250px;
+		height: 320px;
+	}
 `;
 
 function Screen2() {
@@ -82,9 +100,9 @@ function Card({ data }: { data: CardType }) {
 	return (
 		<StyledCard>
 			<div style={{ height: '35%' }}>
-				<Typography variant="h4">{title}</Typography>
+				<Typography variant="h3">{title}</Typography>
 			</div>
-			<Typography variant="h5">{desc}</Typography>
+			<Typography variant="h4">{desc}</Typography>
 		</StyledCard>
 	);
 }
