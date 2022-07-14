@@ -107,10 +107,10 @@ function GuideRequestForm() {
 					name="radio-buttons"
 					inputProps={{ 'aria-label': 'B' }}
 				/>
-				<Typography variant="h6">
+				<div css={{ fontSize: '17px', fontWeight: 400 }}>
 					<span style={{ color: 'blue' }}>개인정보 수집 및 이용</span>
 					에 동의합니다.
-				</Typography>
+				</div>
 			</div>
 			<StyledButton type="submit" variant="contained">
 				사용가이드 다운로드

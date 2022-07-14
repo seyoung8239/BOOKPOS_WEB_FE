@@ -2,14 +2,15 @@ import { styled } from '@mui/material/styles';
 
 interface ContainerProps {
 	bgcolor?: string;
+	wd?: string;
 }
 
 export const StyledContainer = styled('div')<ContainerProps>`
-	height: 880px;
-	padding: 5vw 20vw 5vw 20vw;
+	height: ${props => (props.wd ? props.wd : '650px')};
 	background: ${props => (props.bgcolor ? props.bgcolor : 'white')};
-
-	@media (max-width: 1500px) {
+	padding: 50px;
+	@media (min-width: 1200px) {
+		padding: 50px 20vw;
 	}
 `;
 

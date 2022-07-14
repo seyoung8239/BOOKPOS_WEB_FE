@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import { Typography } from '@mui/material';
 import styled from '@emotion/styled';
 
 const pages = [
@@ -16,7 +15,7 @@ const AppbarLink = styled(Link)`
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	color: #fff;
+	color: #BBB;
 `;
 
 function Footer() {
@@ -24,17 +23,17 @@ function Footer() {
 		<footer
 			style={{
 				background: '#2C2C2C',
-				color: 'white',
+				color: '#BBB',
 				padding: '40px 15px 0px',
 			}}
 		>
-			<Typography>대구광역시 중구 공평로 59, 6층(우원빌딩)</Typography>
-			<Typography>
+			<div>대구광역시 중구 공평로 59, 6층(우원빌딩)</div>
+			<div>
 				(주)플레이정글 ⏐ 대표이사 정영인 ⏐ 사업자등록번호 524-86-01116
-			</Typography>
-			<Typography>통신판매업신고번호 : 2020-대구중구-0465호</Typography>
-			<Typography>Email : bookpos@gmail.com</Typography>
-			<Typography>상담문의 : 카카오톡 @bookpos_(10:00-18:00)</Typography>
+			</div>
+			<div>통신판매업신고번호 : 2020-대구중구-0465호</div>
+			<div>Email : bookpos@gmail.com</div>
+			<div>상담문의 : 카카오톡 @bookpos_(10:00-18:00)</div>
 			<div style={{ height: '40px' }} />
 			<hr />
 			<div
@@ -45,9 +44,9 @@ function Footer() {
 					height: '60px',
 				}}
 			>
-				<Typography>
+				<div>
 					Ⓒ PlayJungle.co, LTD. All rights reserved.
-				</Typography>
+				</div>
 				<div style={{ display: 'flex', }}>
 					{pages.map((el, idx) => (
 						<nav key={idx}>
@@ -60,7 +59,7 @@ function Footer() {
 								>
 									|
 								</div>
-								<Typography>{el.name}</Typography>
+								<div>{el.name}</div>
 							</AppbarLink>
 						</nav>
 					))}

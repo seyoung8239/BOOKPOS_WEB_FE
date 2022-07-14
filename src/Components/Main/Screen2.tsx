@@ -2,7 +2,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { StyledContainer } from '../../styles/styledComponents';
+import { StyledContainer as div } from '../../styles/styledComponents';
 import { bgSecondaryColor } from '../../styles/colors';
 
 import { Typography } from '@mui/material';
@@ -47,50 +47,47 @@ const cardData = [
 ];
 
 const CardList = styled.div`
-	width: 40vw;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	row-gap: 1vw;
+	row-gap: 20px;
+	column-gap: 20px;
 	margin: auto;
 	justify-items: center;
-
-	@media (max-width: 2200px) {
-		width: 100%;
-		height: 50vw;
-	}
-	@media (max-width: 1500px) {
-		width: 100%;
-		height: 60vw;
-	}
 `;
 
 const StyledCard = styled.div`
-	width: 10vw;
-	height: 12.5vw;
+	width: 170px;
+	height: 220px;
 	background-color: ${bgSecondaryColor};
 	border-radius: 20px;
 	padding: 30px;
-
-	@media (max-width: 2200px) {
-		width: 13vw;
-		height: 17.5vw;
-	}
-	@media (max-width: 1500px) {
-		width: 220px;
-		height: 330px;
-	}
 `;
 
 function Screen2() {
 	return (
 		<>
-			<StyledContainer>
-				<CardList>
-					{cardData.map((el, i) => (
-						<Card key={i} data={el} />
-					))}
-				</CardList>
-			</StyledContainer>
+			<div
+				style={{
+					height: '700px',
+					padding: '50px',
+					display: 'flex',
+					justifyContent: 'center',
+				}}
+			>
+				<div
+					style={{
+						width: '100%',
+						display: 'flex',
+						justifyContent: 'center',
+					}}
+				>
+					<CardList>
+						{cardData.map((el, i) => (
+							<Card key={i} data={el} />
+						))}
+					</CardList>
+				</div>
+			</div>
 		</>
 	);
 }
@@ -100,9 +97,9 @@ function Card({ data }: { data: CardType }) {
 	return (
 		<StyledCard>
 			<div style={{ height: '35%' }}>
-				<Typography variant="h3">{title}</Typography>
+				<Typography variant="h4">{title}</Typography>
 			</div>
-			<Typography variant="h4">{desc}</Typography>
+			<div style={{ fontSize: '21px' }}>{desc}</div>
 		</StyledCard>
 	);
 }

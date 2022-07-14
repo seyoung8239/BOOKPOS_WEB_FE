@@ -20,7 +20,7 @@ const Appbar = styled.header`
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-evenly;
-	height: 70px;
+	height: 50px;
 	box-shadow: rgba(100, 100, 111, 0.1) 0px 7px 15px 0px;
 `;
 
@@ -38,7 +38,7 @@ function Header() {
 			{pages.map((el, idx) => (
 				<nav key={idx}>
 					<AppbarLink to={el.to}>
-						<Typography variant="h5">{el.name}</Typography>
+						<Typography variant="h6">{el.name}</Typography>
 						<KeyboardArrowDownIcon fontSize="large" />
 					</AppbarLink>
 				</nav>
