@@ -39,7 +39,7 @@ function Screen3() {
 							기업(출판사), 저작자(작가)에 맞춰 북포스 활용법과
 							자료를 제공합니다.
 						</div>
-						<div style={{ height: '30px' }}></div>
+						<div css={{ height: '30px' }}></div>
 						<div css={{ fontSize: '24px', fontWeight: 400 }}>
 							출판사 규모, 성격, 콘텐츠에 맞는 적합한 상품을
 							상담해드립니다.

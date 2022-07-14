@@ -14,6 +14,7 @@ const RoundButton = styled(Button)<ButtonProps>(({ theme }) => ({
 	width: '250px',
 	height: '60px',
 	borderRadius: '30px',
+	marginTop: '40px',
 	color: theme.palette.getContrastText(primaryColor),
 	backgroundColor: primaryColor,
 }));
@@ -42,7 +43,7 @@ function Screen1() {
 				<div style={{ height: '10px' }}></div>
 				<MainTypo>작가와 출판사를 위한</MainTypo>
 				<MainTypo>웹콘텐츠 관리 프로그램</MainTypo>
-				<RoundButton variant="contained" css={{ marginTop: '5vw' }}>
+				<RoundButton variant="contained">
 					<Typography variant="h5">데모체험 시작하기 </Typography>
 					<KeyboardArrowDownIcon fontSize="large" />
 				</RoundButton>
