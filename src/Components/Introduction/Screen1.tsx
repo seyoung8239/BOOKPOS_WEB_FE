@@ -2,10 +2,9 @@
 import React from 'react';
 
 import { StyledContainer } from '../../styles/styledComponents';
-import { bgPrimaryColor, primaryColor } from '../../styles/colors';
+import { primaryColor } from '../../styles/colors';
 
 import styled from '@emotion/styled';
-import { styled as muiStyled } from '@mui/material';
 import Button, { ButtonProps } from '@mui/material/Button';
 
 import { css } from '@emotion/react';
@@ -22,7 +21,7 @@ const PrimaryButton = styled(Button)<ButtonProps>({
 
 function Screen1() {
 	return (
-		<StyledContainer>
+		<StyledContainer wd="100%">
 			<div
 				css={css`
 					padding: 50px;
@@ -31,7 +30,7 @@ function Screen1() {
 					align-items: center;
 				`}
 			>
-				<img src="/img/bookpos1.png" width="500px" />
+				<img src="/img/bookpos1.png" width="500px" alt="intro1" />
 				<div
 					css={css`
 						height: 50px;
@@ -55,8 +54,23 @@ function Screen1() {
 						height: 120px;
 					`}
 				/>
-				<img src="/img/bookpos2.png" width="600px" />
-
+				<img src="/img/bookpos2.png" width="600px" alt="intro2" />
+				<div
+					css={css`
+						color: #727272;
+					`}
+				>
+					콘텐츠관리, 정산, 통계, 커뮤니티, 결재, 회계
+				</div>
+				<div
+					css={css`
+						font-size: 24px;
+						font-weight: 700;
+						margin-top: 20px;
+					`}
+				>
+					작가와 출판사를 위한 CMS 북포스
+				</div>
 			</div>
 		</StyledContainer>
 	);
