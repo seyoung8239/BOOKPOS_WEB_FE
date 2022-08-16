@@ -35,7 +35,7 @@ function Screen6() {
 						gap: '20px',
 					}}
 				>
-					{queryData.map(el => (
+					{queryData.map((el, i) => (
 						<div
 							style={{
 								width: '150px',
@@ -45,11 +45,12 @@ function Screen6() {
 								display: 'flex',
 								flexDirection: 'column',
 								justifyContent: 'center',
-								alignItems: 'center'
+								alignItems: 'center',
 							}}
+							key={i}
 						>
 							<img src={el.img} width="100px" alt="" />
-							<div style={{height: '20px'}}></div>
+							<div style={{ height: '20px' }}></div>
 							<div
 								style={{
 									textAlign: 'center',

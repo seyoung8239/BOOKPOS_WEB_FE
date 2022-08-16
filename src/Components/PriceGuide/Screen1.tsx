@@ -159,7 +159,7 @@ function Screen1() {
 					`}
 				>
 					{priceData.map((pd, i) => (
-						<ProductBox data={pd} />
+						<ProductBox key={i} data={pd} />
 					))}
 				</div>
 				<div style={{ height: '70px' }}></div>

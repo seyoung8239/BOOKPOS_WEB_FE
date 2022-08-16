@@ -150,6 +150,7 @@ function Screen5() {
 									// }
 								`}
 								onClick={() => setMenuIdx(i)}
+								key={i}
 							>
 								{menu}
 							</div>
