@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { Button, ButtonProps, styled } from '@mui/material';
-import React from 'react';
+import { css } from '@emotion/react';
 import { bgPrimaryColor, primaryColor } from '../../styles/colors';
 import { StyledContainer } from '../../styles/styledComponents';
 
@@ -20,16 +20,19 @@ function Screen2() {
 			<StyledContainer
 				style={{
 					backgroundColor: bgPrimaryColor,
-					padding: '80px 0px',
+					padding: '80px 0px 0px 0px',
 				}}
-				wd="100%"
+				wd="300px"
 			>
 				<div
-					style={{
-						fontSize: '32px',
-						fontWeight: '700',
-						textAlign: 'center',
-					}}
+					css={css`
+						font-size: 3vw;
+						font-weight: 700;
+						text-align: center;
+						@media (min-width: 1200px) {
+							font-size: 2vw;
+						}
+					`}
 				>
 					북포스 데모 프로그램으로 체험해보세요.
 				</div>

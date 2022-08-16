@@ -12,6 +12,9 @@ export const StyledContainer = styled('div')<ContainerProps>`
 	@media (min-width: 1200px) {
 		padding: 50px 20vw;
 	}
+	@media (min-width: 1600px) {
+		padding: 3vw 25vw;
+	}
 `;
 
 export const HalfContainer = styled('div')`

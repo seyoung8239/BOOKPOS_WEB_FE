@@ -1,12 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
+import { StyledContainer } from '../../styles/styledComponents';
 
 function Screen3() {
 	return (
-		<>
+		<StyledContainer>
 			<div
 				style={{
-					fontSize: '27px',
+					fontSize: '3em',
 					fontWeight: '700',
 					textAlign: 'center',
 				}}
@@ -34,7 +35,7 @@ function Screen3() {
 			>
 				<img src="/img/priceTable1.png" width="70%" alt="priceTable" />
 			</div>
-		</>
+		</StyledContainer>
 	);
 }
 

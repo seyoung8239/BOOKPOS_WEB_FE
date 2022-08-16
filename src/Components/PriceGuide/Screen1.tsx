@@ -58,16 +58,23 @@ const ProductBox: React.FC<{ data: productBoxType }> = ({ data }) => {
 		<div
 			css={css`
 				background-color: white;
-				width: 23vw;
+				width: 220px;
 				height: 360px;
 				border-radius: 20px;
-				padding: 1.5vw;
-				fontSize: 10vw;
+				padding: 2.3vw;
+				font-size: 1.4vw;
 				@media (min-width: 1200px) {
-					width: 35vw;
+					width: 240px;
+					padding: 1.5vw;
+					font-size: 17px;
+					height: 380px;
 				}
 				@media (min-width: 1600px) {
-					width: 120vw;
+					width: 260px;
+					padding: 1.5vw;
+					font-size: 20px;
+					width: 280px;
+					height: 420px;
 				}
 			`}
 		>
@@ -75,7 +82,7 @@ const ProductBox: React.FC<{ data: productBoxType }> = ({ data }) => {
 				css={css`
 					color: ${tcolor};
 					font-weight: 700;
-					font-size: 2.0em;
+					font-size: 2em;
 					margin-bottom: 30px;
 				`}
 			>
@@ -83,7 +90,7 @@ const ProductBox: React.FC<{ data: productBoxType }> = ({ data }) => {
 			</div>
 			<div
 				css={css`
-					font-size: 1.2em;
+					font-size: 1.1em;
 				`}
 			>
 				{desc}
@@ -101,7 +108,7 @@ const ProductBox: React.FC<{ data: productBoxType }> = ({ data }) => {
 				월
 				<span
 					css={css`
-						font-size: 2em;
+						font-size: 1.8em;
 						font-weight: 700;
 					`}
 				>
@@ -115,7 +122,7 @@ const ProductBox: React.FC<{ data: productBoxType }> = ({ data }) => {
 					padding: 1vw;
 					font-weight: 400;
 					border-radius: 10px;
-					font-size: 1.0em;
+					font-size: 1em;
 					height: 6em;
 				`}
 			>
@@ -138,10 +145,13 @@ function Screen1() {
 			<StyledContainer bgcolor="#EEE" wd="100%">
 				<div
 					css={css`
-						font-size: 3vw;
+						font-size: 3em;
 						font-weight: 800;
 						text-align: center;
 						margin-bottom: 15px;
+						@media(min-width: 1200px) {
+							
+						}
 					`}
 				>
 					제품 및 가격안내

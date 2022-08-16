@@ -1,13 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react';
+import { StyledContainer } from '../../styles/styledComponents';
 
 function Screen4() {
 	return (
-		<>
+		<StyledContainer wd='100%'>
 			<div
 				style={{
 					textAlign: 'center',
-					fontSize: '27px',
+					fontSize: '3em',
 					fontWeight: '700',
 					color: 'blue',
 				}}
@@ -34,7 +35,7 @@ function Screen4() {
 			>
 				<img src="/img/faqTable.png" width="70%" alt="priceTable" />
 			</div>
-		</>
+		</StyledContainer>
 	);
 }
 

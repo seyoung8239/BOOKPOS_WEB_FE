@@ -14,9 +14,9 @@ function PriceGuide() {
 			<Screen1 />
 			<div style={{ height: '200px' }}></div>
 			<Screen2 />
-			<div style={{ height: '200px' }}></div>
+			<div style={{ height: '150px' }}></div>
 			<Screen3 />
-			<div style={{ height: '200px' }}></div>
+			<div style={{ height: '100px' }}></div>
 			<Screen4 />
 			<Screen5 />
 			<Screen6 />
