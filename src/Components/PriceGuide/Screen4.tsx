@@ -7,7 +7,7 @@ function Screen4() {
 			<div
 				style={{
 					textAlign: 'center',
-					fontSize: '3em',
+					fontSize: '2.5em',
 					fontWeight: '700',
 					color: 'blue',
 				}}

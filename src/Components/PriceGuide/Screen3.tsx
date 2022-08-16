@@ -7,14 +7,14 @@ function Screen3() {
 		<StyledContainer>
 			<div
 				style={{
-					fontSize: '3em',
+					fontSize: '2.5em',
 					fontWeight: '700',
 					textAlign: 'center',
 				}}
 			>
 				상품별 서비스 유형 비교
 			</div>
-			<div style={{ height: '20px' }} />
+			<div style={{ height: '15px' }} />
 			<div
 				style={{
 					fontSize: '18px',

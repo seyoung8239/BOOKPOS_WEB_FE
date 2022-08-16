@@ -21,7 +21,7 @@ function Screen6() {
 				<div
 					style={{
 						fontWeight: 700,
-						fontSize: '44px',
+						fontSize: '2.5em',
 						textAlign: 'center',
 					}}
 				>
