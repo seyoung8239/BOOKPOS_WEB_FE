@@ -12,7 +12,7 @@ import { css } from '@emotion/react';
 const CenteredDiv = styled.div`
 	text-align: center;
 	width: 500px;
-	font-size: 24px;
+	font-size: 1.2vw;
 `;
 
 const PrimaryButton = styled(Button)<ButtonProps>({
@@ -30,10 +30,10 @@ function Screen1() {
 					align-items: center;
 				`}
 			>
-				<img src="/img/bookpos1.png" width="500px" alt="intro1" />
+				<img src="/img/bookpos1.png" width="600vw" alt="intro1" />
 				<div
 					css={css`
-						height: 50px;
+						height: 1vw;
 					`}
 				/>
 				<CenteredDiv>
@@ -43,7 +43,7 @@ function Screen1() {
 				</CenteredDiv>
 				<div
 					css={css`
-						height: 30px;
+						height: 3vw;
 					`}
 				/>
 				<PrimaryButton variant="contained">
@@ -54,7 +54,7 @@ function Screen1() {
 						height: 120px;
 					`}
 				/>
-				<img src="/img/bookpos2.png" width="600px" alt="intro2" />
+				<img src="/img/bookpos2.png" width="800vw" alt="intro2" />
 				<div
 					css={css`
 						color: #727272;

@@ -38,9 +38,13 @@ const CardList = styled.div`
 
 const StyledCard = styled.div`
 	width: 170px;
+	height: 200px;
 	background-color: ${bgSecondaryColor};
 	border-radius: 20px;
 	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 `;
 
 function Screen2() {
@@ -61,7 +65,14 @@ function Screen2() {
 					<img src="/img/intro1.png" width="140px" alt="intro1" />
 					작가는 구체적이고 투명한 정산 프로그램을 원한다!
 				</div>
-				<CardList>
+				<CardList
+					css={css`
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						gap: 1vw;
+					`}
+				>
 					{cardData.map((el, i) => (
 						<Card key={i} data={el} />
 					))}

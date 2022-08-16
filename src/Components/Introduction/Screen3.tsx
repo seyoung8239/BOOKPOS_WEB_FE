@@ -38,6 +38,7 @@ const CardList = styled.div`
 
 const StyledCard = styled.div`
 	width: 170px;
+	height: 200px;
 	background-color: ${bgPrimaryColor};
 	border-radius: 20px;
 	padding: 30px;
@@ -64,7 +65,14 @@ function Screen3() {
 					<img src="/img/intro2.png" width="140px" alt="intro1" />
 					출판사는 효율적인 콘텐츠 관리 및 정산 프로그램을 원한다!
 				</div>
-				<CardList>
+				<CardList
+					css={css`
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						gap: 1vw;
+					`}
+				>
 					{cardData.map((el, i) => (
 						<Card key={i} data={el} />
 					))}
