@@ -34,7 +34,7 @@ const Estimate = (
 				alt="intro1"
 			/>
 		</div>
-		<div style={{ height: '40px' }}></div>
+		<div style={{ height: '20px' }}></div>
 		<div style={{ display: 'flex' }}>
 			<img src="/img/mail.png" width="25px" height="25px" alt="intro1" />
 			<div style={{ width: '10px' }}></div>
@@ -49,7 +49,45 @@ const Estimate = (
 	</div>
 );
 
-const menuContents = [Estimate];
+const contract = (
+	<div>
+		<div style={{ fontSize: '18px', fontWeight: 600, marginTop: '10px' }}>
+			(1) 견적확인
+		</div>
+		<div>
+			영업일 기준 24시간 이내 메일을 통해 견적과 전자계약서를 확인하실 수
+			있습니다.
+		</div>
+		<div style={{ fontSize: '18px', fontWeight: 600, marginTop: '10px' }}>
+			(2) 계약체결
+		</div>
+		<div>
+			견적서와 함께 받으신 전자계약서를 통해 북포스와 계약을 체결합니다.
+		</div>
+		<div style={{ fontSize: '18px', fontWeight: 600, marginTop: '10px' }}>
+			(3) 설치비 및 선입금
+		</div>
+		<div>
+			프로젝트 매니저가 지정되며 설치비와 선입금 확인 후 프로그램 설치를
+			준비합니다.
+		</div>
+	</div>
+);
+
+const programRent = (
+	<div style={{ fontSize: '18px', fontWeight: 600, marginTop: '10px' }}>
+		결제확인 후 메일로 프로그램 계정과 사이트 주소를 라이선스와 함께 발급해
+		드립니다.
+	</div>
+);
+
+const taxBill = (
+	<div style={{ fontSize: '18px', fontWeight: 600, marginTop: '10px' }}>
+		매월 1일 세금계산서 선발행 후 월 사용료를 지불합니다.
+	</div>
+);
+
+const menuContents = [Estimate, contract, programRent, taxBill];
 
 function Screen5() {
 	const [menuIdx, setMenuIdx] = useState(0);
