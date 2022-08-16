@@ -162,6 +162,49 @@ function Screen1() {
 						<ProductBox data={pd} />
 					))}
 				</div>
+				<div style={{ height: '70px' }}></div>
+				<div style={{ fontWeight: 600 }}>
+					- 부가세 별도, 월 비용 기준
+				</div>
+				<div>
+					<div
+						style={{
+							display: 'flex',
+							justifyContent: 'space-between',
+							width: '600px',
+						}}
+					>
+						<div
+							style={{
+								display: 'flex',
+								justifyContent: 'center',
+								alignContent: 'center',
+								backgroundColor: tripleColor,
+								width: '60px',
+								height: '20px',
+								borderRadius: '12px',
+								fontSize: '14px',
+							}}
+						>
+							<div
+								style={{
+									color: 'white',
+									height: '100%',
+									textAlign: 'center',
+								}}
+							>
+								이벤트 1
+							</div>
+						</div>
+						<div>
+							베타서비스 오픈 이벤트 1개월 사용료 무료(22. 12.
+							31까지)
+						</div>
+						<div style={{ color: '#555' }}>
+							1년 약정(무통보 자동 갱신)
+						</div>
+					</div>
+				</div>
 			</StyledContainer>
 		</>
 	);
