@@ -2,7 +2,6 @@
 import React from 'react';
 import { StyledContainer } from '../../styles/styledComponents';
 import { css } from '@emotion/react';
-import { StringLiteral } from 'typescript';
 
 import { primaryColor, secondaryColor, tripleColor } from '../../styles/colors';
 import { Button } from '@mui/material';
@@ -56,81 +55,90 @@ interface options {
 const ProductBox: React.FC<{ data: productBoxType }> = ({ data }) => {
 	const { title, tcolor, desc, price, options } = data;
 	return (
-		<>
+		<div
+			css={css`
+				background-color: white;
+				width: 23vw;
+				height: 360px;
+				border-radius: 20px;
+				padding: 1.5vw;
+				fontSize: 10vw;
+				@media (min-width: 1200px) {
+					width: 35vw;
+				}
+				@media (min-width: 1600px) {
+					width: 120vw;
+				}
+			`}
+		>
 			<div
 				css={css`
-					background-color: white;
-					width: 200px;
-					border-radius: 20px;
-					padding: 20px;
+					color: ${tcolor};
+					font-weight: 700;
+					font-size: 2.0em;
+					margin-bottom: 30px;
 				`}
 			>
-				<div
-					css={css`
-						color: ${tcolor};
-						font-weight: 700;
-						font-size: 27px;
-						margin-bottom: 30px;
-					`}
-				>
-					{title}
-				</div>
-				<div
-					css={css`
-						font-size: 16px;
-					`}
-				>
-					{desc}
-				</div>
-				<div
-					css={css`
-						color: #888;
-						font-size: 14px;
-					`}
-				>
-					약정 1년 단위
-				</div>
-				<div style={{ height: '10px' }} />
-				<div>
-					월
-					<span
-						css={css`
-							font-size: 27px;
-							font-weight: 700;
-						`}
-					>
-						{price}원
-					</span>
-				</div>
-				<div style={{ height: '10px' }} />
-				<div
-					css={css`
-						background-color: #eee;
-						padding: 10px;
-						font-weight: 400;
-						border-radius: 10px;
-						font-size: 14px;
-					`}
-				>
-					<div>{options.capacity}</div>
-					<div style={{ height: '5px' }} />
-					<div>설치비: {options.initialPrice}원/최초 1회</div>
-					<div style={{ height: '5px' }} />
-					<div>계정 제한: 무제한</div>
-				</div>
-				<Button>견적문의 및 도입 신청</Button>
+				{title}
 			</div>
-		</>
+			<div
+				css={css`
+					font-size: 1.2em;
+				`}
+			>
+				{desc}
+			</div>
+			<div
+				css={css`
+					color: #888;
+					font-size: 0.8em;
+				`}
+			>
+				약정 1년 단위
+			</div>
+			<div style={{ height: '10px' }} />
+			<div>
+				월
+				<span
+					css={css`
+						font-size: 2em;
+						font-weight: 700;
+					`}
+				>
+					{price}원
+				</span>
+			</div>
+			<div style={{ height: '10px' }} />
+			<div
+				css={css`
+					background-color: #eee;
+					padding: 1vw;
+					font-weight: 400;
+					border-radius: 10px;
+					font-size: 1.0em;
+					height: 6em;
+				`}
+			>
+				<div>{options.capacity}</div>
+				<div style={{ height: '5px' }} />
+				<div>설치비: {options.initialPrice}원/최초 1회</div>
+				<div style={{ height: '5px' }} />
+				<div>계정 제한: 무제한</div>
+			</div>
+			<Button>
+				<div style={{ fontSize: '1.2em' }}>견적문의 및 도입 신청</div>
+			</Button>
+		</div>
 	);
 };
 
 function Screen1() {
 	return (
 		<>
-			<StyledContainer bgcolor="#EEE" wd='100%'>
+			<StyledContainer bgcolor="#EEE" wd="100%">
 				<div
 					css={css`
-						font-size: 32px;
+						font-size: 3vw;
 						font-weight: 800;
 						text-align: center;
 						margin-bottom: 15px;
@@ -155,7 +163,7 @@ function Screen1() {
 						display: flex;
 						align-items: center;
 						justify-content: center;
-						gap: 15px;
+						gap: 1vw;
 					`}
 				>
 					{priceData.map((pd, i) => (
