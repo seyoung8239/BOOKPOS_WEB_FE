@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { secondaryColor } from '../../styles/colors';
+import AddSharpIcon from '@mui/icons-material/AddSharp';
+import RemoveSharpIcon from '@mui/icons-material/RemoveSharp';
 
 interface News {
 	img: string;
@@ -22,25 +24,33 @@ function ClosedNewsItem({
 	return (
 		<>
 			<hr />
-			<div style={{ display: 'flex', padding: '40px', gap: '40px' }}>
-				<img src={img} width="140px" alt="intro1" />
+			<div style={{ display: 'flex', padding: '30px', gap: '60px' }}>
+				<img src={img} width="200px" height="150px" alt="intro1" />
 				<div
 					style={{
 						display: 'flex',
 						flexDirection: 'column',
 						gap: '10px',
+						width: '100%',
 					}}
 				>
-					<div style={{ color: secondaryColor, fontSize: '44px' }}>
+					<div style={{ color: secondaryColor, fontSize: '27px' }}>
 						{title}
 					</div>
-                    aslfegrkjfeasgdhlfej;fsdghklesghrdfkjdwoefahl
 					<div>{date}</div>
-					<div>{desc}</div>
+					<div>{desc.slice(0, 150)}...</div>
 				</div>
-				<button onClick={() => toggleNthIsOpen(idx)}>
-					{isOpen ? '-' : '+'}
-				</button>
+				{isOpen ? (
+					<RemoveSharpIcon
+						onClick={() => toggleNthIsOpen(idx)}
+						sx={{ fontSize: 30, border: '3px solid black' }}
+					/>
+				) : (
+					<AddSharpIcon
+						onClick={() => toggleNthIsOpen(idx)}
+						sx={{ fontSize: 30, border: '3px solid black' }}
+					/>
+				)}
 			</div>
 		</>
 	);
@@ -55,12 +65,24 @@ function OpenedNewsItem({
 	toggleNthIsOpen: Function;
 	idx: number;
 }) {
-	const { img, title, desc, date, isOpen } = news;
+	const { img, title, desc, date } = news;
 	return (
 		<>
 			<hr />
-			<div style={{ display: 'flex', padding: '40px', gap: '40px' }}>
-				<img src={img} width="140px" alt="intro1" />
+			<div
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					padding: '30px',
+					gap: '30px',
+				}}
+			>
+				<div style={{ fontSize: '36px' }}>{title}</div>
+				<div>{date}</div>
+				<div style={{ display: 'flex', justifyContent: 'center' }}>
+					<img src={img} width="300vw" alt="intro1" />
+				</div>
+
 				<div
 					style={{
 						display: 'flex',
@@ -68,15 +90,8 @@ function OpenedNewsItem({
 						gap: '10px',
 					}}
 				>
-					<div style={{ color: secondaryColor, fontSize: '44px' }}>
-						{title}
-					</div>
-					<div>{date}</div>
 					<div>{desc}</div>
 				</div>
-				<button onClick={() => toggleNthIsOpen(idx)}>
-					{isOpen ? '-' : '+'}
-				</button>
 			</div>
 		</>
 	);
@@ -94,13 +109,12 @@ function NewsItem({
 	const { isOpen } = news;
 	return (
 		<>
-			{isOpen ? (
-				<ClosedNewsItem
-					news={news}
-					toggleNthIsOpen={toggleNthIsOpen}
-					idx={idx}
-				/>
-			) : (
+			<ClosedNewsItem
+				news={news}
+				toggleNthIsOpen={toggleNthIsOpen}
+				idx={idx}
+			/>
+			{isOpen && (
 				<OpenedNewsItem
 					news={news}
 					toggleNthIsOpen={toggleNthIsOpen}
