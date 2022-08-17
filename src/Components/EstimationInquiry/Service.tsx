@@ -1,13 +1,17 @@
 /** @jsxImportSource @emotion/react */
-import { Button } from '@mui/material';
 import { css } from '@emotion/react';
 import { priceData } from '../PriceGuide/Screen1';
 
-function Service({ setIdx }: { setIdx: Function }) {
+function Service({ setIdx, idx }: { setIdx: Function; idx: number }) {
 	return (
 		<>
 			{priceData.map((pd, i) => (
-				<ProductBox key={i} data={pd} setIdx={() => setIdx(i)} />
+				<ProductBox
+					key={i}
+					data={pd}
+					setIdx={() => setIdx(i)}
+					isSelected={i === idx}
+				/>
 			))}
 		</>
 	);
@@ -26,26 +30,29 @@ interface options {
 	initialPrice: string;
 }
 
-const ProductBox: React.FC<{ data: productBoxType; setIdx: Function }> = ({
-	data, setIdx
-}) => {
+const ProductBox: React.FC<{
+	data: productBoxType;
+	setIdx: Function;
+	isSelected: Boolean;
+}> = ({ data, setIdx, isSelected }) => {
 	const { title, tcolor, desc, price, options } = data;
 	return (
 		<button
 			css={css`
-				background-color: white;
+				background-color: ${isSelected ? tcolor : 'white'};
 				width: 220px;
 				border: none;
 				border-radius: 20px;
 				padding: 20px;
 				font-size: 17px;
 				box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+				${isSelected && 'color: white;'}
 			`}
-			onClick={()=>setIdx()}
+			onClick={() => setIdx()}
 		>
 			<div
 				css={css`
-					color: ${tcolor};
+					color: ${!isSelected && tcolor};
 					font-weight: 700;
 					font-size: 1.6em;
 					margin-bottom: 20px;
@@ -63,7 +70,7 @@ const ProductBox: React.FC<{ data: productBoxType; setIdx: Function }> = ({
 			<div style={{ height: '10px' }} />
 			<div
 				css={css`
-					color: #888;
+					color: #AAA;
 					font-size: 0.8em;
 				`}
 			>

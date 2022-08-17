@@ -65,7 +65,7 @@ function EstimationInquiry() {
 								padding: '10px',
 							}}
 						>
-							<Service setIdx={setIdx} />
+							<Service setIdx={setIdx} idx={idx}/>
 						</div>
 					</div>
 					<div
