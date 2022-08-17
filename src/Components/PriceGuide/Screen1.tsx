@@ -6,7 +6,7 @@ import { css } from '@emotion/react';
 import { primaryColor, secondaryColor, tripleColor } from '../../styles/colors';
 import { Button } from '@mui/material';
 
-const priceData: productBoxType[] = [
+export const priceData: productBoxType[] = [
 	{
 		title: 'BASIC',
 		tcolor: tripleColor,
