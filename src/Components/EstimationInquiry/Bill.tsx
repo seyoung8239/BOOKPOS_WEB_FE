@@ -2,7 +2,6 @@
 import { primaryColor } from '../../styles/colors';
 import { serviceTypes } from '../../pages/EstimationInquiry';
 
-
 function Bill({ idx, add }: { idx: number; add: number }) {
 	return (
 		<>
@@ -15,7 +14,7 @@ function Bill({ idx, add }: { idx: number; add: number }) {
 				}}
 			>
 				<div style={{ height: '20px' }}></div>
-				<div style={{ fontSize: '17px' }}>Total</div>
+				<div style={{ fontSize: '17px' }}>Total Bill</div>
 				<div style={{ fontSize: '36px', fontWeight: 700 }}>
 					{serviceTypes[idx].name}
 				</div>

@@ -32,8 +32,8 @@ function EstimationInquiry() {
 	const [add, setAdd] = useState(0);
 
 	return (
-		<StyledContainer bgcolor="#EEE">
-			<div style={{ display: 'flex', gap: '30px' }}>
+		<StyledContainer bgcolor="#EEE" wd="100%">
+			<div style={{ display: 'flex', gap: '30px', padding: '3vw 0px' }}>
 				<div
 					style={{
 						display: 'flex',
@@ -65,9 +65,10 @@ function EstimationInquiry() {
 								padding: '10px',
 							}}
 						>
-							<Service setIdx={setIdx} idx={idx}/>
+							<Service setIdx={setIdx} idx={idx} />
 						</div>
 					</div>
+
 					<div
 						style={{
 							backgroundColor: 'white',
@@ -76,8 +77,69 @@ function EstimationInquiry() {
 							borderRadius: '10px',
 						}}
 					>
-						<div>옵션</div>
+						<div style={{ fontSize: '21px', marginBottom: '10px' }}>
+							옵션
+						</div>
 						<hr />
+						<div
+							style={{
+								display: 'grid',
+								gridTemplateColumns: '0.7fr 2fr 3fr 2fr',
+								rowGap: '20px',
+								marginTop: '10px',
+								fontSize: '17px',
+							}}
+						>
+							<div></div>
+							<b>용량추가</b>
+							<b>개수</b>
+							<b>총합</b>
+							<div></div>
+							<div>ㄴ100GB 용량</div>
+							<div
+								style={{
+									display: 'flex',
+									gap: '10px',
+									alignItems: 'center',
+								}}
+							>
+								50,000원 / 월
+								<div
+									style={{
+										width: '60px',
+										border: '1px solid black',
+										height: '18px',
+										borderRadius: '10px',
+										padding: '0px 10px',
+										display: 'flex',
+										justifyContent: 'space-between',
+									}}
+								>
+									<div
+										onClick={() =>
+											add > 0 && setAdd(prev => prev - 1)
+										}
+									>
+										-
+									</div>
+									<input
+										type="text"
+										value={add + ''}
+										onChange={e => setAdd(+e.target.value)}
+										style={{
+											border: 'none',
+											width: '14px',
+										}}
+									/>
+									<div
+										onClick={() => setAdd(prev => prev + 1)}
+									>
+										+
+									</div>
+								</div>
+							</div>
+							<div>{add * 50000}원</div>
+						</div>
 					</div>
 				</div>
 				<Bill idx={idx} add={add} />

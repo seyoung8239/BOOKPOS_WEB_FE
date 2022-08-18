@@ -60,7 +60,7 @@ const ProductBox: React.FC<{ data: productBoxType }> = ({ data }) => {
 				background-color: white;
 				width: 220px;
 				border-radius: 20px;
-				padding: 30px;
+				padding: 30px 25px;
 				font-size: 17px;
 			`}
 		>
@@ -105,18 +105,21 @@ const ProductBox: React.FC<{ data: productBoxType }> = ({ data }) => {
 			<div
 				css={css`
 					background-color: #eee;
-					padding: 15px;
+					padding: 10px;
 					font-weight: 400;
 					border-radius: 10px;
 					font-size: 1em;
 				`}
 			>
-				<div>{options.capacity}</div>
-				<div style={{ height: '5px' }} />
-				<div>설치비: {options.initialPrice}원/최초 1회</div>
-				<div style={{ height: '5px' }} />
-				<div>계정 제한: 무제한</div>
+				<div style={{ fontSize: '0.9em' }}>{options.capacity}</div>
+				<div style={{ height: '10px' }} />
+				<div style={{ fontSize: '0.9em' }}>
+					설치비: {options.initialPrice}원/최초 1회
+				</div>
+				<div style={{ height: '10px' }} />
+				<div style={{ fontSize: '0.9em' }}>계정 제한: 무제한</div>
 			</div>
+			<div style={{ height: '20px' }} />
 			<Button>
 				<div style={{ fontSize: '1.2em' }}>견적문의 및 도입 신청</div>
 			</Button>
@@ -184,17 +187,12 @@ function Screen1() {
 								height: '20px',
 								borderRadius: '12px',
 								fontSize: '14px',
+								lineHeight: '20px',
+								color: 'white',
+								textAlign: 'center',
 							}}
 						>
-							<div
-								style={{
-									color: 'white',
-									height: '100%',
-									textAlign: 'center',
-								}}
-							>
-								이벤트 1
-							</div>
+							이벤트 1
 						</div>
 						<div>
 							베타서비스 오픈 이벤트 1개월 사용료 무료(22. 12.
