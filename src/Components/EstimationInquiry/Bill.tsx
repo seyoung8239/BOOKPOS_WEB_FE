@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import { Link } from 'react-router-dom';
 import { primaryColor } from '../../styles/colors';
 import { serviceTypes } from '../../pages/EstimationInquiry';
 
@@ -60,7 +61,8 @@ function Bill({ idx, add }: { idx: number; add: number }) {
 					</div>
 				</div>
 				<hr />
-				<div
+				<Link
+					to="/estimation-inquiry-form"
 					style={{
 						backgroundColor: primaryColor,
 						width: '100%',
@@ -71,10 +73,11 @@ function Bill({ idx, add }: { idx: number; add: number }) {
 						fontSize: '24px',
 						paddingTop: 'auto',
 						lineHeight: '50px',
+						textDecoration: 'none',
 					}}
 				>
 					견적 및 도입 신청
-				</div>
+				</Link>
 			</div>
 		</>
 	);

@@ -20,7 +20,7 @@ export const serviceTypes = [
 	},
 	{
 		name: 'PREMIUM',
-		member: '소속 작가 300인 이상',
+		member: '소속 작가 300인 이하',
 		capacity: '500',
 		installation: '1,000,000',
 		monthlyFee: '450000',
