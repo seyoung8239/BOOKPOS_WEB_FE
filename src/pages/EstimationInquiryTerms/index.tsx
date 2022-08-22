@@ -19,6 +19,8 @@ function EstimationInquiryTerms() {
 			return [...prev];
 		});
 
+		if (i === 2) store.setConsent({ consent_marketing: !termList[2] });
+
 		if (termList.some(el => el)) setAllTermList(true);
 		else setAllTermList(false);
 	};
@@ -39,7 +41,6 @@ function EstimationInquiryTerms() {
 			return;
 		}
 
-		store.setConsent({ consent_marketing: termList[2] });
 		console.log(store.est);
 		navigate('/estimation-inquiry-complete');
 	};
