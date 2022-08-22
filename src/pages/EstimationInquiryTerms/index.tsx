@@ -4,9 +4,12 @@ import { StyledContainer } from '../../styles/styledComponents';
 import { Button, Radio } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import useStore from '../../store';
 
 function EstimationInquiryTerms() {
 	const navigate = useNavigate();
+	const store = useStore();
+
 	const [allTermList, setAllTermList] = useState(false);
 	const [termList, setTermList] = useState([false, false, false, false]);
 
@@ -21,7 +24,6 @@ function EstimationInquiryTerms() {
 	};
 
 	const handleAllToggle = () => {
-		console.log(allTermList, termList);
 		setTermList(prev => {
 			const newTermList = prev.map(el => !allTermList);
 			return newTermList;
@@ -31,10 +33,14 @@ function EstimationInquiryTerms() {
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
+
 		if (!termList[0] || !termList[1] || !termList[3]) {
 			alert('필수 항목은 모두 동의해 주세요.');
 			return;
 		}
+
+		store.setConsent({ consent_marketing: termList[2] });
+		console.log(store.est);
 		navigate('/estimation-inquiry-complete');
 	};
 

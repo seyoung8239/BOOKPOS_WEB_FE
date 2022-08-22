@@ -94,6 +94,7 @@ const useStore = create<Store>(set => ({
 	},
 
 	setForms(formInfo: FormInfo) {
+		console.log(formInfo);
 		set((state: Store) => ({
 			...state,
 			est: setForms(state.est, formInfo),

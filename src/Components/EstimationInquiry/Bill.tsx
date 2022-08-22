@@ -1,9 +1,34 @@
 /** @jsxImportSource @emotion/react */
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { primaryColor } from '../../styles/colors';
 import { serviceTypes } from '../../pages/EstimationInquiry';
 
+import useStore from '../../store/index';
+
 function Bill({ idx, add }: { idx: number; add: number }) {
+	const navigate = useNavigate();
+	const store = useStore();
+
+	const getType = (idx: number) => {
+		switch (idx) {
+			case 0:
+				return 'Basic';
+			case 1:
+				return 'Special';
+			case 2:
+				return 'Premium';
+			default:
+				throw Error('invalid service type');
+		}
+	};
+
+	const handleClick = (e: React.FormEvent) => {
+		e.preventDefault();
+		
+		store.setType({ type: getType(idx), capacity: add });
+		navigate('/estimation-inquiry-form');
+	};
+
 	return (
 		<>
 			<div
@@ -61,8 +86,7 @@ function Bill({ idx, add }: { idx: number; add: number }) {
 					</div>
 				</div>
 				<hr />
-				<Link
-					to="/estimation-inquiry-form"
+				<div
 					style={{
 						backgroundColor: primaryColor,
 						width: '100%',
@@ -75,9 +99,10 @@ function Bill({ idx, add }: { idx: number; add: number }) {
 						lineHeight: '50px',
 						textDecoration: 'none',
 					}}
+					onClick={handleClick}
 				>
 					견적 및 도입 신청
-				</Link>
+				</div>
 			</div>
 		</>
 	);

@@ -36,8 +36,6 @@ function Main() {
 	const [newsData, setNewsData] = useState(dummyNewsData);
 	const toggleNthIsOpen = (i: number) => {
 		setNewsData(prev => {
-			console.log('asdf');
-			console.log(new Date().getTime());
 			prev[i] = { ...prev[i], isOpen: !prev[i].isOpen };
 			return [...prev];
 		});

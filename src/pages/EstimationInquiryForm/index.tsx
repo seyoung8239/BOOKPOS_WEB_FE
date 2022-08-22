@@ -4,6 +4,8 @@ import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
+import useStore, { FormInfo } from '../../store';
+
 const corpInfo = [
 	'상호명',
 	'대표자명',
@@ -26,18 +28,35 @@ const managerInfo = [
 
 const bookPosManagerInfo = ['북포스 관리자명', '등록하고 싶은 관리자 ID'];
 
-const estimationInfoName = corpInfo
-	.concat(managerInfo)
-	.concat(bookPosManagerInfo);
+const estimationInfoName = [
+	'company_name',
+	'company_representative',
+	'company_business_number',
+	'company_business_category',
+	'company_webpage',
+	'company_addrerss',
+	'company_writers',
 
-interface Obj {
-	[key: string]: string;
-}
+	'manager_name',
+	'manager_email',
+	'manager_cell',
+	'manager_phone',
+	'manager_hier',
+
+	'tax_name',
+	'tax_email',
+
+	'admin_name',
+	'admin_id',
+];
 
 function EstimationInquiryForm() {
 	const navigate = useNavigate();
+	const store = useStore();
+
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
+
 		const formData = e.currentTarget as Element;
 		const fieldValues = formData.getElementsByTagName('input');
 		const estimationInfo: string[] = [];
@@ -45,11 +64,12 @@ function EstimationInquiryForm() {
 			estimationInfo.push(fieldValues.item(i)?.value!);
 		}
 
-		const obj: Obj = {};
+		const formInfo: any = {};
 		estimationInfoName.forEach((el, i) => {
-			obj[el] = estimationInfo[i];
+			formInfo[el] = estimationInfo[i];
 		});
-		console.log(obj);
+
+		store.setForms(formInfo as FormInfo);
 		navigate('/estimation-inquiry-terms');
 	};
 
