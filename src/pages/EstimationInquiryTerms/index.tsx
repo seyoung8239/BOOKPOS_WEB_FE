@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { StyledContainer } from '../../styles/styledComponents';
-import { Button, FormControlLabel, Radio, RadioGroup } from '@mui/material';
+import { Button, Radio } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
@@ -35,6 +35,7 @@ function EstimationInquiryTerms() {
 			alert('필수 항목은 모두 동의해 주세요.');
 			return;
 		}
+		navigate('/estimation-inquiry-complete');
 	};
 
 	return (

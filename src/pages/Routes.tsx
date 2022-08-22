@@ -6,6 +6,7 @@ import News from './News';
 import EstimationInquiry from './EstimationInquiry';
 import EstimationInquiryForm from './EstimationInquiryForm';
 import EstimationInquiryTerms from './EstimationInquiryTerms';
+import EstimationInquiryComplete from './EstimationInquiryComplete';
 
 function Routes() {
 	return (
@@ -22,6 +23,10 @@ function Routes() {
 			<Route
 				path="/estimation-inquiry-terms"
 				element={<EstimationInquiryTerms />}
+			/>
+			<Route
+				path="/estimation-inquiry-complete"
+				element={<EstimationInquiryComplete />}
 			/>
 		</RouteWrapper>
 	);
