@@ -1,10 +1,14 @@
 import { useState } from 'react';
+import axios from 'axios';
 
 import { StyledContainer } from '../../styles/styledComponents';
 import { Button, Radio } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+
 import useStore from '../../store';
+
+import { baseDir } from '../../constant';
 
 function EstimationInquiryTerms() {
 	const navigate = useNavigate();
@@ -30,6 +34,7 @@ function EstimationInquiryTerms() {
 			const newTermList = prev.map(el => !allTermList);
 			return newTermList;
 		});
+		store.setConsent({ consent_marketing: !termList[2] });
 		setAllTermList(!allTermList);
 	};
 
@@ -41,6 +46,7 @@ function EstimationInquiryTerms() {
 			return;
 		}
 
+		axios.post(`${baseDir}/estimation`, store.est);
 		console.log(store.est);
 		navigate('/estimation-inquiry-complete');
 	};

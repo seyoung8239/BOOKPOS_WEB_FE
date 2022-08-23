@@ -84,7 +84,9 @@ type Store = {
 };
 
 const useStore = create<Store>(set => ({
-	est: {},
+	est: {
+		consent_marketing: false,
+	},
 
 	setType(serviceTypeAndOptions: ServiceTypeAndOptions) {
 		set((state: Store) => ({
