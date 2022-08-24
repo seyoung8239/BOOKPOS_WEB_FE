@@ -1,5 +1,9 @@
 /** @jsxImportSource @emotion/react */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+import { baseDir } from '../../constant';
+
 import { StyledContainer } from '../../styles/styledComponents';
 import NewsItem from './NewsItem';
 
@@ -32,8 +36,28 @@ const dummyNewsData = [
 	},
 ];
 
+interface newsType {
+	title: string;
+	content: string;
+	imgae: string;
+	date: string;
+}
+
 function Main() {
 	const [newsData, setNewsData] = useState(dummyNewsData);
+	const [newsOpenList, setNewsOpenList] = useState<boolean[]>([]);
+
+	// TODO: API 데이터 붙이기
+	// useEffect(() => {
+	// 	const fetchData = async () => {
+	// 		const res = await axios.get(`${baseDir}/news`);
+	// 		const n = res.data.length;
+	// 		setNewsData(res.data);
+	// 		setNewsOpenList(new Array(n).fill(false));
+	// 	};
+	// 	fetchData();
+	// }, []);
+
 	const toggleNthIsOpen = (i: number) => {
 		setNewsData(prev => {
 			prev[i] = { ...prev[i], isOpen: !prev[i].isOpen };

@@ -6,6 +6,7 @@ import { bgPrimaryColor } from '../../styles/colors';
 import { css } from '@emotion/react';
 
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function Screen6() {
 	return (
@@ -35,9 +36,20 @@ function Screen6() {
 						margin: 0px auto;
 					`}
 				>
-					<Button color="secondary" variant="outlined" size="large">
-						BOOKPOS NEWS
-					</Button>
+					<Link
+						to="/news"
+						style={{
+							textDecoration: 'none',
+						}}
+					>
+						<Button
+							color="secondary"
+							variant="outlined"
+							size="large"
+						>
+							BOOKPOS NEWS
+						</Button>
+					</Link>
 				</div>
 			</StyledContainer>
 		</>

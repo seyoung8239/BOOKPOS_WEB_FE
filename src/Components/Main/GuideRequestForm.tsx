@@ -30,6 +30,7 @@ function GuideRequestForm() {
 
 	const handleSubmit = (e: React.SyntheticEvent) => {
 		e.preventDefault();
+		if (!agreed) alert('개인정보 수집 및 이용에 동의해 주세요');
 		console.log(state);
 	};
 

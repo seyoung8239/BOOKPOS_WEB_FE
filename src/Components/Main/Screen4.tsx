@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { StyledContainer } from '../../styles/styledComponents';
 import { HalfContainer } from '../../styles/styledComponents';
@@ -57,8 +57,8 @@ function Screen4() {
 							제작하였습니다.
 						</div>
 						<div style={{ height: '40px' }}></div>
-						<a
-							href={youtubeSrc}
+						<Link
+							to="/introduction"
 							css={css`
 								font-size: 17px;
 								color: blue;
@@ -69,7 +69,7 @@ function Screen4() {
 						>
 							북포스 소개(링크)
 							<ArrowForwardIcon fontSize="small" />
-						</a>
+						</Link>
 					</HalfContainer>
 					<HalfContainer>
 						<div

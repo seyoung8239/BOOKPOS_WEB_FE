@@ -5,6 +5,7 @@ import { css } from '@emotion/react';
 
 import { primaryColor, secondaryColor, tripleColor } from '../../styles/colors';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 export const priceData: productBoxType[] = [
 	{
@@ -120,9 +121,18 @@ const ProductBox: React.FC<{ data: productBoxType }> = ({ data }) => {
 				<div style={{ fontSize: '0.9em' }}>계정 제한: 무제한</div>
 			</div>
 			<div style={{ height: '20px' }} />
-			<Button>
-				<div style={{ fontSize: '1.2em' }}>견적문의 및 도입 신청</div>
-			</Button>
+			<Link
+				to="/estimation-inquiry"
+				style={{
+					textDecoration: 'none',
+				}}
+			>
+				<Button>
+					<div style={{ fontSize: '1.2em' }}>
+						견적문의 및 도입 신청
+					</div>
+				</Button>
+			</Link>
 		</div>
 	);
 };
