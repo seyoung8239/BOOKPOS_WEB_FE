@@ -44,23 +44,22 @@ interface newsType {
 }
 
 function Main() {
-	const [newsData, setNewsData] = useState(dummyNewsData);
+	const [newsData, setNewsData] = useState([]);
 	const [newsOpenList, setNewsOpenList] = useState<boolean[]>([]);
 
-	// TODO: API 데이터 붙이기
-	// useEffect(() => {
-	// 	const fetchData = async () => {
-	// 		const res = await axios.get(`${baseDir}/news`);
-	// 		const n = res.data.length;
-	// 		setNewsData(res.data);
-	// 		setNewsOpenList(new Array(n).fill(false));
-	// 	};
-	// 	fetchData();
-	// }, []);
+	useEffect(() => {
+		const fetchData = async () => {
+			const res = await axios.get(`${baseDir}/news`);
+			const n = res.data.length;
+			setNewsData(res.data);
+			setNewsOpenList(new Array(n).fill(false));
+		};
+		fetchData();
+	}, []);
 
-	const toggleNthIsOpen = (i: number) => {
-		setNewsData(prev => {
-			prev[i] = { ...prev[i], isOpen: !prev[i].isOpen };
+	const toggleNthIsOpen = (i: number) => () => {
+		setNewsOpenList(prev => {
+			prev[i] = !prev[i];
 			return [...prev];
 		});
 	};
@@ -81,8 +80,8 @@ function Main() {
 				<NewsItem
 					key={i}
 					news={el}
-					toggleNthIsOpen={toggleNthIsOpen}
-					idx={i}
+					isOpen={newsOpenList[i]}
+					toggleNthIsOpen={toggleNthIsOpen(i)}
 				/>
 			))}
 		</StyledContainer>

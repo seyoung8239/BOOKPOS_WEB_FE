@@ -2,30 +2,54 @@
 import { secondaryColor } from '../../styles/colors';
 import AddSharpIcon from '@mui/icons-material/AddSharp';
 import RemoveSharpIcon from '@mui/icons-material/RemoveSharp';
+import { Buffer } from 'buffer';
 
 interface News {
-	img: string;
+	image: {
+		data: Buffer;
+		contentType: string;
+	};
 	title: string;
-	desc: string;
+	content: string;
 	date: string;
 	isOpen: boolean;
 }
 
 function ClosedNewsItem({
 	news,
+	isOpen,
 	toggleNthIsOpen,
-	idx,
 }: {
 	news: News;
+	isOpen: Boolean;
 	toggleNthIsOpen: Function;
-	idx: number;
 }) {
-	const { img, title, desc, date, isOpen } = news;
+	const { image, title, content, date } = news;
+	let imageString = '';
+	let contentType = '';
+	if (image) {
+		imageString = Buffer.from(image.data).toString('ascii');
+		contentType = image.contentType;
+	}
+
 	return (
 		<>
 			<hr />
-			<div style={{ display: 'flex', padding: '30px', gap: '60px' }}>
-				<img src={img} width="200px" height="150px" alt="intro1" />
+			<div
+				style={{
+					display: 'flex',
+					padding: '30px',
+					gap: '60px',
+					cursor: 'pointer',
+				}}
+				onClick={() => toggleNthIsOpen()}
+			>
+				<img
+					src={`data:${contentType};base64,${imageString}`}
+					width="200px"
+					height="150px"
+					alt=""
+				/>
 				<div
 					style={{
 						display: 'flex',
@@ -38,16 +62,14 @@ function ClosedNewsItem({
 						{title}
 					</div>
 					<div>{date}</div>
-					<div>{desc.slice(0, 150)}...</div>
+					<div>{content && content.slice(0, 150)}...</div>
 				</div>
 				{isOpen ? (
 					<RemoveSharpIcon
-						onClick={() => toggleNthIsOpen(idx)}
 						sx={{ fontSize: 30, border: '3px solid black' }}
 					/>
 				) : (
 					<AddSharpIcon
-						onClick={() => toggleNthIsOpen(idx)}
 						sx={{ fontSize: 30, border: '3px solid black' }}
 					/>
 				)}
@@ -56,16 +78,15 @@ function ClosedNewsItem({
 	);
 }
 
-function OpenedNewsItem({
-	news,
-	toggleNthIsOpen,
-	idx,
-}: {
-	news: News;
-	toggleNthIsOpen: Function;
-	idx: number;
-}) {
-	const { img, title, desc, date } = news;
+function OpenedNewsItem({ news }: { news: News }) {
+	const { image, title, content, date } = news;
+	let imageString = '';
+	let contentType = '';
+	if (image) {
+		imageString = Buffer.from(image.data).toString('ascii');
+		contentType = image.contentType;
+	}
+
 	return (
 		<>
 			<hr />
@@ -80,7 +101,11 @@ function OpenedNewsItem({
 				<div style={{ fontSize: '36px' }}>{title}</div>
 				<div>{date}</div>
 				<div style={{ display: 'flex', justifyContent: 'center' }}>
-					<img src={img} width="300vw" alt="intro1" />
+					<img
+						src={`data:${contentType};base64,${imageString}`}
+						width="300vw"
+						alt="intro1"
+					/>
 				</div>
 
 				<div
@@ -90,7 +115,7 @@ function OpenedNewsItem({
 						gap: '10px',
 					}}
 				>
-					<div>{desc}</div>
+					<div>{content}</div>
 				</div>
 			</div>
 		</>
@@ -99,28 +124,21 @@ function OpenedNewsItem({
 
 function NewsItem({
 	news,
+	isOpen,
 	toggleNthIsOpen,
-	idx,
 }: {
 	news: News;
+	isOpen: Boolean;
 	toggleNthIsOpen: Function;
-	idx: number;
 }) {
-	const { isOpen } = news;
 	return (
 		<>
 			<ClosedNewsItem
 				news={news}
+				isOpen={isOpen}
 				toggleNthIsOpen={toggleNthIsOpen}
-				idx={idx}
 			/>
-			{isOpen && (
-				<OpenedNewsItem
-					news={news}
-					toggleNthIsOpen={toggleNthIsOpen}
-					idx={idx}
-				/>
-			)}
+			{isOpen && <OpenedNewsItem news={news} />}
 		</>
 	);
 }
