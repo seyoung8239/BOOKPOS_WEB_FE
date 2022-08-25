@@ -142,14 +142,14 @@ function EstimationInquiryForm() {
 						gap: '30px',
 					}}
 				>
-					<Button variant="outlined" size="large">
-						<Link
-							to="/estimation-inquiry"
-							style={{ textDecoration: 'none', color: '#3f51b5' }}
-						>
+					<Link
+						to="/estimation-inquiry"
+						style={{ textDecoration: 'none', color: '#3f51b5' }}
+					>
+						<Button variant="outlined" size="large">
 							이전
-						</Link>
-					</Button>
+						</Button>
+					</Link>
 					<Button variant="contained" size="large" type="submit">
 						다음
 					</Button>

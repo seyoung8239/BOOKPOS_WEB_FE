@@ -24,7 +24,7 @@ function Bill({ idx, add }: { idx: number; add: number }) {
 
 	const handleClick = (e: React.FormEvent) => {
 		e.preventDefault();
-		
+
 		store.setType({ type: getType(idx), capacity: add });
 		navigate('/estimation-inquiry-form');
 	};
@@ -62,7 +62,9 @@ function Bill({ idx, add }: { idx: number; add: number }) {
 					}}
 				>
 					<div>1 개월 기본료</div>
-					<div>{serviceTypes[idx].monthlyFee} 원</div>
+					<div>
+						{(+serviceTypes[idx].monthlyFee).toLocaleString()} 원
+					</div>
 				</div>
 				<div
 					style={{
@@ -71,7 +73,7 @@ function Bill({ idx, add }: { idx: number; add: number }) {
 					}}
 				>
 					<div>1 개월 추가용량 * {add}</div>
-					<div>{add * 50000} 원</div>
+					<div>{(add * 50000).toLocaleString()} 원</div>
 				</div>
 				<div style={{ height: '5px' }}></div>
 				<div
@@ -82,7 +84,11 @@ function Bill({ idx, add }: { idx: number; add: number }) {
 				>
 					<div>1 개월 총 이용료</div>
 					<div style={{ fontSize: '21px', fontWeight: 700 }}>
-						{add * 50000 + +serviceTypes[idx].monthlyFee} 원
+						{(
+							add * 50000 +
+							+serviceTypes[idx].monthlyFee
+						).toLocaleString()}{' '}
+						원
 					</div>
 				</div>
 				<hr />
@@ -98,6 +104,7 @@ function Bill({ idx, add }: { idx: number; add: number }) {
 						paddingTop: 'auto',
 						lineHeight: '50px',
 						textDecoration: 'none',
+						cursor: 'pointer',
 					}}
 					onClick={handleClick}
 				>

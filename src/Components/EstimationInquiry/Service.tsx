@@ -46,7 +46,8 @@ const ProductBox: React.FC<{
 				padding: 20px;
 				font-size: 17px;
 				box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-				${isSelected && 'color: white;'}
+				${isSelected && 'color: white;'};
+				cursor: pointer;
 			`}
 			onClick={() => setIdx()}
 		>
@@ -70,7 +71,7 @@ const ProductBox: React.FC<{
 			<div style={{ height: '10px' }} />
 			<div
 				css={css`
-					color: #AAA;
+					color: #aaa;
 					font-size: 0.8em;
 				`}
 			>

@@ -116,6 +116,7 @@ function EstimationInquiry() {
 									}}
 								>
 									<div
+										style={{ cursor: 'pointer' }}
 										onClick={() =>
 											add > 0 && setAdd(prev => prev - 1)
 										}
@@ -132,13 +133,14 @@ function EstimationInquiry() {
 										}}
 									/>
 									<div
+										style={{ cursor: 'pointer' }}
 										onClick={() => setAdd(prev => prev + 1)}
 									>
 										+
 									</div>
 								</div>
 							</div>
-							<div>{add * 50000}원</div>
+							<div>{(add * 50000).toLocaleString()}원</div>
 						</div>
 					</div>
 				</div>

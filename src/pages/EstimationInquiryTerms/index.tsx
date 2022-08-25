@@ -38,7 +38,7 @@ function EstimationInquiryTerms() {
 		setAllTermList(!allTermList);
 	};
 
-	const handleSubmit = (e: React.FormEvent) => {
+	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 
 		if (!termList[0] || !termList[1] || !termList[3]) {
@@ -46,8 +46,7 @@ function EstimationInquiryTerms() {
 			return;
 		}
 
-		axios.post(`${baseDir}/estimation`, store.est);
-		console.log(store.est);
+		await axios.post(`${baseDir}/estimation`, store.est);
 		navigate('/estimation-inquiry-complete');
 	};
 
@@ -181,14 +180,14 @@ function EstimationInquiryTerms() {
 						gap: '30px',
 					}}
 				>
-					<Button variant="outlined" size="large">
-						<Link
-							to="/estimation-inquiry-form"
-							style={{ textDecoration: 'none', color: '#3f51b5' }}
-						>
+					<Link
+						to="/estimation-inquiry-form"
+						style={{ textDecoration: 'none', color: '#3f51b5' }}
+					>
+						<Button variant="outlined" size="large">
 							뒤로가기
-						</Link>
-					</Button>
+						</Button>
+					</Link>
 					<Button variant="contained" size="large" type="submit">
 						도입신청
 					</Button>
