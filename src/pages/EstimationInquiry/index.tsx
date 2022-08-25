@@ -54,6 +54,7 @@ function EstimationInquiry() {
 							style={{
 								fontSize: '21px',
 								fontWeight: 900,
+								marginBottom: '10px'
 							}}
 						>
 							기본 서비스

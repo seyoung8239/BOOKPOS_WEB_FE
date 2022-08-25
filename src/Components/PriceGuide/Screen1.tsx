@@ -140,7 +140,8 @@ const ProductBox: React.FC<{ data: productBoxType }> = ({ data }) => {
 function Screen1() {
 	return (
 		<>
-			<StyledContainer bgcolor="#EEE" wd="100%">
+			<div style={{ marginTop: '70px' }}></div>
+			<StyledContainer bgcolor="#f7f7f7" wd="100%">
 				<div
 					css={css`
 						font-size: 2.5em;

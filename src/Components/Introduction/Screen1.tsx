@@ -28,6 +28,7 @@ function Screen1() {
 					display: flex;
 					flex-direction: column;
 					align-items: center;
+					margin-top: 100px;
 				`}
 			>
 				<img src="/img/bookpos1.png" width="600vw" alt="intro1" />
@@ -52,6 +53,7 @@ function Screen1() {
 				<div
 					css={css`
 						height: 120px;
+						margin-bottom: 80px;
 					`}
 				/>
 				<img src="/img/bookpos2.png" width="800vw" alt="intro2" />

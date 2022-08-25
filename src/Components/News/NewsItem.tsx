@@ -113,6 +113,8 @@ function OpenedNewsItem({ news }: { news: News }) {
 						display: 'flex',
 						flexDirection: 'column',
 						gap: '10px',
+						fontSize:'21px',
+						lineHeight: '30px'
 					}}
 				>
 					<div>{content}</div>

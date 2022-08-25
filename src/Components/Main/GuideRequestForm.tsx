@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { styled, Radio } from '@mui/material';
+import { styled, Radio, Select, MenuItem } from '@mui/material';
 
 interface formStateType {
 	company: string;
@@ -18,6 +17,7 @@ interface formStateType {
 function GuideRequestForm() {
 	const [state, setState] = useState<formStateType>({} as formStateType);
 	const [agreed, setAgreed] = useState<boolean | undefined>(false);
+	const [service, setService] = useState<string>('SPECIAL');
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setState(prev => {
@@ -90,6 +90,18 @@ function GuideRequestForm() {
 				fullWidth
 				variant="filled"
 			/>
+			{/* <InputLabel id="demo-simple-select-label">문의상품</InputLabel> */}
+			<Select
+				variant="filled"
+				id="demo-simple-select"
+				value={service}
+				label="문의상품"
+				onChange={e => setService(e.target.value)}
+			>
+				<MenuItem value="BASIC">BASIC</MenuItem>
+				<MenuItem value="SPECIAL">SPECIAL</MenuItem>
+				<MenuItem value="PREMIUM">PREMIUM</MenuItem>
+			</Select>
 			<TextField
 				label="문의상품"
 				name="product"
