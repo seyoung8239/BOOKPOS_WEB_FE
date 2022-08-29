@@ -1,5 +1,3 @@
-import { Fab } from '@mui/material';
-
 function FloatingKakao() {
 	return (
 		// <Fab

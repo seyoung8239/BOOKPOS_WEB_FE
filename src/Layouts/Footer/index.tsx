@@ -15,7 +15,7 @@ const AppbarLink = styled(Link)`
 	display: flex;
 	align-items: center;
 	text-decoration: none;
-	color: #BBB;
+	color: #bbb;
 `;
 
 function Footer() {
@@ -27,9 +27,12 @@ function Footer() {
 				padding: '40px 15px 0px',
 			}}
 		>
-			<div>대구광역시 중구 공평로 59, 6층(우원빌딩)</div>
+			<img src="/img/footer_img.png" width="60px" alt="intro1" />
+			<div style={{ marginTop: '15px' }}>
+				대구광역시 중구 공평로 59, 6층(우원빌딩)
+			</div>
 			<div>
-				(주)플레이정글 ⏐ 대표이사 정영인 ⏐ 사업자등록번호 524-86-01116
+				(주)노리소프트 ⏐ 대표이사 정영인 ⏐ 사업자등록번호 524-86-01116
 			</div>
 			<div>통신판매업신고번호 : 2020-대구중구-0465호</div>
 			<div>Email : bookpos@gmail.com</div>
@@ -39,15 +42,13 @@ function Footer() {
 			<div
 				style={{
 					display: 'flex',
-                    justifyContent: 'space-between',
+					justifyContent: 'space-between',
 					alignItems: 'center',
 					height: '60px',
 				}}
 			>
-				<div>
-					Ⓒ PlayJungle.co, LTD. All rights reserved.
-				</div>
-				<div style={{ display: 'flex', }}>
+				<div>Ⓒ NORISOFT.co, LTD. All rights reserved.</div>
+				<div style={{ display: 'flex' }}>
 					{pages.map((el, idx) => (
 						<nav key={idx}>
 							<AppbarLink to={el.to}>

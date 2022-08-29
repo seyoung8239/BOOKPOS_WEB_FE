@@ -142,12 +142,10 @@ function Screen5() {
 									font-weight: 600;
 									display: flex;
 									align-items: center;
+									cursor: pointer;
 									border: ${i === menuIdx
 										? '1px solid black'
 										: ''};
-									// @media (min-width: 1200px) {
-									// 	width: 200px;
-									// }
 								`}
 								onClick={() => setMenuIdx(i)}
 								key={i}
