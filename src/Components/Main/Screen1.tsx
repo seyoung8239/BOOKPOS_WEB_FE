@@ -35,6 +35,8 @@ function Screen1() {
 					background-color: ${bgPrimaryColor};
 					padding: 50px;
 					height: 650px;
+					position: relative;
+					z-index: -10;
 				`}
 			>
 				<Typography variant="h4">

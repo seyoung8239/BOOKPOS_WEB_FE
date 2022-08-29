@@ -12,6 +12,17 @@ function Home() {
 			<Screen2 />
 			<Screen3 />
 			<Screen4 />
+			<img
+				src="/img/mainGraphic.png"
+				alt=""
+				style={{
+					position: 'absolute',
+					right: 0,
+					top: 250,
+					width: '40vw',
+					zIndex: -1,
+				}}
+			/>
 		</>
 	);
 }

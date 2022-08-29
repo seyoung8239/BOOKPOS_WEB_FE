@@ -10,6 +10,7 @@ import Screen6 from '../../Components/Introduction/Screen6';
 function Introduction() {
 	return (
 		<>
+			<div style={{ height: '20px' }}></div>
 			<Screen1 />
 			<Screen2 />
 			<Screen3 />

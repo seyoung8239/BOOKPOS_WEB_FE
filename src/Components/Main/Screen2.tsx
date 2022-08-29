@@ -68,24 +68,32 @@ function Screen2() {
 		<>
 			<div
 				style={{
-					height: '700px',
-					padding: '50px',
-					display: 'flex',
-					justifyContent: 'center',
+					position: 'relative',
+					// zIndex: 0,
+					backgroundColor: 'white',
 				}}
 			>
 				<div
 					style={{
-						width: '100%',
+						height: '700px',
+						padding: '50px',
 						display: 'flex',
 						justifyContent: 'center',
 					}}
 				>
-					<CardList>
-						{cardData.map((el, i) => (
-							<Card key={i} data={el} />
-						))}
-					</CardList>
+					<div
+						style={{
+							width: '100%',
+							display: 'flex',
+							justifyContent: 'center',
+						}}
+					>
+						<CardList>
+							{cardData.map((el, i) => (
+								<Card key={i} data={el} />
+							))}
+						</CardList>
+					</div>
 				</div>
 			</div>
 		</>
@@ -96,9 +104,15 @@ function Card({ data }: { data: CardType }) {
 	const { title, desc, icon } = data;
 	return (
 		<StyledCard>
-			<div style={{ height: '35%', display: 'flex', justifyContent: 'space-between' }}>
+			<div
+				style={{
+					height: '35%',
+					display: 'flex',
+					justifyContent: 'space-between',
+				}}
+			>
 				<Typography variant="h4">{title}</Typography>
-				<img src={icon} width='40px' height='40px' alt="" />
+				<img src={icon} width="40px" height="40px" alt="" />
 			</div>
 			<div style={{ fontSize: '21px' }}>{desc}</div>
 		</StyledCard>
