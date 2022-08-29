@@ -46,7 +46,7 @@ function EstimationInquiryTerms() {
 			return;
 		}
 
-		await axios.post(`${baseDir}/estimation`, store.est);
+		await axios.post(`${baseDir}/api/estimation`, store.est);
 		navigate('/estimation-inquiry-complete');
 	};
 
