@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './Layouts/Header';
 import Footer from './Layouts/Footer';
 import Routes from './pages/Routes';
+import FloatingKakao from './Layouts/FloatingKakao';
 
 import theme from './styles/theme';
 
@@ -13,6 +14,7 @@ function App() {
 				<Header />
 				<Routes />
 				<Footer />
+				<FloatingKakao />
 			</ThemeProvider>
 		</div>
 	);
